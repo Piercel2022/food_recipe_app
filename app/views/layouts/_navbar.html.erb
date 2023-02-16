@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <% if user_signed_in? %>
+          <%= link_to 'RecipesApp', "/recipes", :class => "navbar-brand" %>
+          <%= button_to 'Logout', destroy_user_session_path, :class => " btn btn-danger ", method: :delete, data:{turbo:false} %>
+        <% end %>
+
+</nav>

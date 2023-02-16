@@ -1,0 +1,41 @@
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <%= render @recipe %>
+
+    <table>
+     <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+     </thead>
+     <tbody>
+      <% @recipe.recipe_foods.includes(:food).each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name%></td>
+          <td><%= "#{recipe_food.quantity}#{recipe_food.food.measuring_unit}"%></td>
+          <td><%= recipe_food.quantity * recipe_food.food.price%></td>
+          <td>
+            <%= link_to 'modify' %>
+            <%= link_to 'remove' %>
+          </td>
+        </tr>
+      <% end %>
+     </tbody>
+    </table>
+    <%= link_to 'Generate shopping list', shopping_lists_index_path(recipe_id: @recipe.id), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Add Ingredient', new_recipe_food_path(recipe_id: @recipe.id), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+    <%= link_to 'Edit this recipe', edit_recipe_path(@recipe), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to 'Destroy this recipe', recipe_path(@recipe), method: :delete, class: "mb-5 mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to 'Back to recipes', recipes_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>
