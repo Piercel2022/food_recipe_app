@@ -3,24 +3,25 @@
     <p>Amount of food items to buy: </p>
     <p>Total value of food needed: </p>
   </div>
-
-  <div>
-    <table>
-      <thead>
-        <tr>
-          <th>Food</th>
-          <th>Quantity</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe.recipe_foods.each do |recipe_food|  %>
+        <% if recipe_food.quantity > recipe_food.food.quantity %>
+          <tr>
+            <th><%=recipe_food.food.name%></th>
+            <th><%= recipe_food.quantity - recipe_food.food.quantity %></th>
+            <th> </th>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
