@@ -2,7 +2,7 @@
         <%= link_to 'RecipesApp', "/recipes" %>
         <%= link_to 'Recipes', "/recipes" %>
         <%= link_to 'Food', "/foods" %>
-        <%= link_to 'Public Recipes', "/public_lists" %>
+        <%= link_to 'Public Recipes', "public_recipes/index" %>
         <%= link_to 'New Recipe', "/recipes/new"%>
         <%= button_to 'Logout', destroy_user_session_path, :class => " btn btn-danger ", method: :delete, data:{turbo:false} %>
   <% end %>
