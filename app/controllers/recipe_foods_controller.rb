@@ -13,7 +13,6 @@ class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
-    # @recipe =
   end
 
   # GET /recipe_foods/1/edit
@@ -50,6 +49,7 @@ class RecipeFoodsController < ApplicationController
 
   # DELETE /recipe_foods/1 or /recipe_foods/1.json
   def destroy
+    binding.break
     @recipe_food.destroy
 
     respond_to do |format|
