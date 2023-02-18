@@ -27,7 +27,6 @@ gem 'turbo-rails'
 gem 'stimulus-rails'
 
 # Use cancancan for Authorization
-gem 'cancancan', '~> 3.4'
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem 'tailwindcss-rails'
