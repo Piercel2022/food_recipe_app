@@ -21,5 +21,4 @@ RSpec.describe Recipe, type: :system do
     click_link 'Add Ingredient'
     expect(page).to have_current_path(new_recipe_food_path(recipe_id: Recipe.first))
   end
-
 end

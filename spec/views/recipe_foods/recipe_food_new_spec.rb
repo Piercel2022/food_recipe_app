@@ -10,5 +10,4 @@ RSpec.describe Food, type: :system do
     click_link 'Add Ingredient'
     expect(page).to have_content('Quantity')
   end
-
 end
