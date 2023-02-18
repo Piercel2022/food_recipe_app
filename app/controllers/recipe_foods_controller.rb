@@ -6,16 +6,11 @@ class RecipeFoodsController < ApplicationController
     @recipe_foods = RecipeFood.all
   end
 
-  # GET /recipe_foods/1 or /recipe_foods/1.json
-  def show; end
-
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
   end
 
-  # GET /recipe_foods/1/edit
-  def edit; end
 
   # POST /recipe_foods or /recipe_foods.json
   def create

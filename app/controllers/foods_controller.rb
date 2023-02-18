@@ -6,16 +6,12 @@ class FoodsController < ApplicationController
     @foods = Food.includes(:user).where(user: current_user)
   end
 
-  # GET /foods/1 or /foods/1.json
-  def show; end
 
   # GET /foods/new
   def new
     @food = Food.new
   end
 
-  # GET /foods/1/edit
-  def edit; end
 
   # POST /foods or /foods.json
   def create

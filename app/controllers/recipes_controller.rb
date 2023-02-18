@@ -6,16 +6,11 @@ class RecipesController < ApplicationController
     @recipes = Recipe.includes(:user).where(user: current_user)
   end
 
-  # GET /recipes/1 or /recipes/1.json
-  def show; end
-
   # GET /recipes/new
   def new
     @recipe = Recipe.new
   end
 
-  # GET /recipes/1/edit
-  def edit; end
 
   # POST /recipes or /recipes.json
   def create
