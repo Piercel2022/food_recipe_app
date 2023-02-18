@@ -1,0 +1,50 @@
+<!-- component -->
+<div class="bg-grey-lighter min-h-screen flex flex-col">
+            <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+                <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                    <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= render "devise/shared/error_messages", resource: resource %>
+                    <!-- Name input -->
+                    <div class="mb-6">
+                        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:"form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-light rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"%>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="mb-6">
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-light rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"%>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="mb-6">
+                        <% if @minimum_password_length %>
+                          <em>(<%= @minimum_password_length %> characters minimum)</em>
+                        <% end %><br />
+                        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder:"Password", class:"form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-light rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"%>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="mb-6">
+                        <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", placeholder:"Password", class:"form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"%>
+                    </div>
+
+                    <div class="actions w-full text-center text-white py-3 rounded bg-green-700  hover:bg-green-900 focus:outline-none my-1">
+                      <%= f.submit "Sign up", data: { turbo: false } %>
+                    </div>
+                    <div class="text-center text-sm text-grey-dark mt-4">
+                        By signing up, you agree to the 
+                        <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
+                            Terms of Service
+                        </a> and 
+                        <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
+                            Privacy Policy
+                        </a>
+                    </div>
+                </div>
+                <div class="text-grey-dark mt-6">
+                    Already have an account? 
+                    <%= link_to 'Log in', new_user_session_path, class:"no-underline border-b border-sky-600 text-sky-600"  %>
+                </div>
+              <% end %>
+            </div>
+        </div>

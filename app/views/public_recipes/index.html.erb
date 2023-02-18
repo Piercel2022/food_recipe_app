@@ -1,0 +1,15 @@
+<h1 class="font-bold text-4xl text-center mt-5">Public Recipes</h1>
+<% @recipes.each do |recipe|%>
+  <div class="max-w-4xl flex justify-center items-center mt-10 gap-80 border-b mx-auto	pb-5 pl-20 shadow-lg">
+
+    <div>
+      <p class="font-bold text-lg"><%= recipe.name%></p>
+      <p>By: <%= recipe.user.name%></p>
+    </div> 
+    <div>
+      <p>Total food item: <%= recipe.foods.size%></p>
+      <p>Total Price: <%= recipe.recipe_foods.joins(:food).sum("recipe_foods.quantity * foods.price")%></p>
+    </div>
+  </div>
+<%end%>
+
