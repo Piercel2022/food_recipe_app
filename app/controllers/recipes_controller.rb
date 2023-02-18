@@ -11,7 +11,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-
   # POST /recipes or /recipes.json
   def create
     @recipe = current_user.recipes.new(recipe_params)
