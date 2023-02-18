@@ -125,6 +125,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
+  ./bin/dev
   rails server or rails s
 ```
 
