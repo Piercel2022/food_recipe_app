@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.3'
+ruby '2.7.2'
 
 gem 'devise'
 
@@ -25,6 +25,8 @@ gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
+
+# Use cancancan for Authorization
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem 'tailwindcss-rails'
@@ -65,6 +67,7 @@ end
 group :development do
   gem 'bullet'
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'letter_opener_web', '~> 2.0'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]

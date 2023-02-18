@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.all
+    @foods = Food.includes(:user).where(user: current_user)
   end
 
   # GET /foods/1 or /foods/1.json
@@ -64,6 +64,6 @@ class FoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def food_params
-    params.require(:food).permit(:name, :measuring_unit, :price)
+    params.require(:food).permit(:name, :measuring_unit, :quantity, :price)
   end
 end

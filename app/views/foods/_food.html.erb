@@ -1,27 +1,50 @@
 <div id="<%= dom_id food %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= food.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Measuring unit:</strong>
-    <%= food.measuring_unit %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Quantity:</strong>
-    <%= food.quantity %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Price:</strong>
-    <%= food.price %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this food", food, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this food', edit_food_path(food), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+  <div class="flex flex-col">
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+          <table class="min-w-max mx-auto border border-black text-center">
+            <thead class=" bg-gray-50">
+              <tr>
+                <th scope="col" class="text-sm font-semibold text-gray-900 px-6 py-4 border-r border-black">
+                  Food
+                </th>
+                <th scope="col" class="text-sm font-semibold text-gray-900 px-6 py-4 border-r border-black">
+                  Measuring_unit
+                </th>
+                <th scope="col" class="text-sm font-semibold text-gray-900 px-6 py-4 border-r border-black">
+                  Quantity
+                </th>
+                <th scope="col" class="text-sm font-semibold text-gray-900 px-6 py-4 border-r border-black">
+                  Unit price
+                </th>
+                <th scope="col" class="text-sm font-semibold text-gray-900 px-6 py-4">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-light text-gray-900 border-r border-b border-black"><%= food.name %></td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r border-b border-black">
+                <%= food.measuring_unit %>
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r border-b border-black">
+                <%= food.quantity %>
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 border-b border-r border-black whitespace-nowrap">
+                <%= food.price %>
+                </td>
+                <td class="text-sm text-red-600 font-semibold px-6 py-4 border-b border-black whitespace-nowrap">
+                <%= button_to "Delete", food_path(food), method: :delete, data: { confirm: "Are you sure?" } %>                
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+  </div>
 </div>
+<% if action_name != "show" %>
+  <div class="flex justify-end gap-20">
+    <%= link_to "Show this food", food, class: "rounded-lg py-2 px-2 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this food', edit_food_path(food), class: "rounded-lg py-2  px-2 bg-gray-100 inline-block font-medium" %>
+  </div>
+  <% end %>
