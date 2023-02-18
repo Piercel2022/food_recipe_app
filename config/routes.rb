@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'shopping_lists/index'
-  get 'public_recipes/index'
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  get '/public_recipes', to: 'public_recipes#index'
+  get '/shopping_lists', to: 'shopping_lists#index'
   resources :recipe_foods
   resources :recipes
   resources :foods
