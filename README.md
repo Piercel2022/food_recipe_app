@@ -135,7 +135,7 @@ To run tests, run the following command:
 
 
 ```sh
-  To Run all tests - rspec
+  To Run all tests - rspec spec --format documentation
   To Run model tests - rspec spec/models
   To Run integration tests - rspec spec/views
 ```
