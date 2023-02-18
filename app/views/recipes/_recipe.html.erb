@@ -1,37 +1,11 @@
-<div id="<%= dom_id recipe %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= recipe.name %>
-  </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Cooking time:</strong>
-    <%= recipe.cooking_time %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= recipe.description %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Public:</strong>
-    <%= recipe.public %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= recipe.user_id %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this recipe", recipe, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this recipe', edit_recipe_path(recipe), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+<div class="max-w-5xl flex justify-center items-center mt-5 gap-80 border-b mx-auto	pb-5 pl-20 shadow-lg">
+      <div>
+        <div class="font-semibold text-l"><%= link_to (recipe.name), recipe_path(recipe)%></div>
+        <div class="text-red-600 text-l"><%= button_to "REMOVE", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" } %></div>
+      </div>
+      <div>
+        <p class="text-sm font-normal text-left break-words bg-light text-textColor"><%= recipe.description %></p>
+      </div>
 </div>
+
