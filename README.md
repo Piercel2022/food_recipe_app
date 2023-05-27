@@ -106,8 +106,8 @@ Clone this repository to your desired folder:
 
 
 ```sh
-  git clone https://github.com/Piercel2022/FOOD RECIPE APP.git
-  cd FOOD RECIPE APP
+  git clone https://github.com/Piercel2022/FOOD_RECIPE_APP.git
+  cd FOOD_RECIPE_APP
 ```
 
 ### Install
