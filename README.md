@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>Recipe APP</b></h3>
+  <h3><b>FOOD RECIPE APP</b></h3>
   </br>
   <img src="logo.gif" alt="logo" width="250"  height="auto" />
   <br>
@@ -31,9 +31,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Recipe App] <a name="about-project"></a>
+# 📖 [FOOD RECIPE APP] <a name="about-project"></a>
 
-**The Recipe App keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.** 
+**The FOOD RECIPE APP keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.** 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -106,8 +106,8 @@ Clone this repository to your desired folder:
 
 
 ```sh
-  git clone https://github.com/Piercel2022/recipe_app.git
-  cd recipe_app
+  git clone https://github.com/Piercel2022/FOOD RECIPE APP.git
+  cd FOOD RECIPE APP
 ```
 
 ### Install
